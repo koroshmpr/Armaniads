@@ -1,0 +1,57 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `utilities` layer
+ *
+ * Add your own utility classes to this theme. Complex utility classes should
+ * be added using Tailwind’s plugin system:
+ *
+ * https://tailwindcss.com/docs/plugins#adding-utilities
+ */
+.rotate-y-30 {
+	transform: perspective(1200px) rotateY(-10deg);
+}
+
+.swiper-pagination-bullet {
+	@apply transition-all duration-300 p-2 lg:p-0;
+
+	&.active {
+		@apply bg-primary w-10 rounded-md opacity-100;
+	}
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+	font-size: 32px;
+}
+.gform_footer {
+	@apply text-center;
+	.gform_button {
+		@apply bg-secondary hover:bg-white text-xl text-black font-bold hover:text-primary w-full lg:w-fit px-6 py-2 rounded-lg cursor-pointer transition-colors;
+	}
+}
+
+.gform_body {
+	input, textarea {
+		@apply text-white border-2 rounded-2xl border-white !p-4 bg-primaryMask;
+		&::placeholder {
+			color:white;
+		}
+	}
+}
+.btn-hover-primary {
+	background: linear-gradient(to left, theme('colors.primary') 50%, white 50%) left ;
+	background-size: 310%;
+	@apply text-primary rounded-md border-white font-bold transition-all duration-500 ease-out;
+	&:hover {
+		@apply text-white border-primary;
+		background-position: right;
+	}
+}
+.btn-hover-white {
+	background: linear-gradient(to left, white 50%, theme('colors.primary') 50%) left ;
+	background-size: 310%;
+	@apply text-white border-white font-bold transition-all duration-500 ease-out;
+	&:hover {
+		@apply text-primary border-primary;
+		background-position: right;
+	}
+}
+

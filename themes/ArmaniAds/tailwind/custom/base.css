@@ -1,0 +1,79 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ *
+ * “Add things like base typography styles [or] opinionated global resets.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-base-styles
+ */
+
+/**
+ * This uses the background and foreground colors declared in the
+ * `theme.json` file and is applied both to the frontend and in the block
+ * editor.
+*/
+html {
+	@apply scroll-smooth;
+
+	* {
+		scroll-margin-top: 200px;
+	}
+}
+
+body {
+	@apply bg-background text-foreground;
+}
+
+ul {
+	li::marker {
+		@apply !text-secondary
+	}
+}
+
+article.post-container, .about-list, .content, #blog_content {
+	h2, h3, h4, h5, h6 {
+		@apply font-bold mb-4;
+
+		&:not(:first-child) {
+			@apply mt-10;
+		}
+	}
+
+	h2 {
+		@apply lg:text-3xl text-2xl;
+		/* Typically used for major headings */
+	}
+
+	h3 {
+		@apply lg:text-2xl text-xl;
+		/* Slightly smaller than h2 */
+	}
+
+	h4 {
+		@apply lg:text-xl text-lg;
+		/* Medium heading size */
+	}
+
+	h5 {
+		@apply lg:text-lg text-base;
+		/* Smaller heading, used less prominently */
+	}
+
+	h6 {
+		@apply text-base;
+		/* Default text size, often for less emphasized headings */
+	}
+
+	img, figure {
+		@apply max-w-full mx-auto my-8;
+	}
+}
+
+.about-list {
+	h2, h3, h4, h5, h6 {
+		@apply text-primary;
+	}
+}
+
+#primary-menu:first-child > .parent-menu-item:hover > a {
+	text-decoration: underline;
+}
