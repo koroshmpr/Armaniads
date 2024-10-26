@@ -24,8 +24,6 @@ if ($query->have_posts()) { ?>
 				<div class="grid gap-3 items-start flex-1">
 					<h5 class="text-black/75 text-xl"><?php the_title(); ?></h5>
 					<div class="details text-sm text-gray-600">
-						<span class="category"><?php the_category(', '); ?></span> |
-						<span class="author">توسط <?php the_author(); ?></span> |
 						<span class="date"><?php echo get_the_date(); ?></span> |
 						<span><?= do_shortcode('[reading_time]') ?> دقیقه</span>
 					</div>

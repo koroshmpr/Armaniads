@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			delay: 5000,
 			disableOnInteraction: true,
 		},
+		loop: true,
 		pagination: {
 			el: '.costumer-pagination',
 			bulletActiveClass: 'active',
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			clickable: true,
 			renderBullet: function (index, className) {
 				const images = window.galleryImages;
-				return `<img src="${images[index]}" class="size-16 rounded-md object-cover ${className}">`;
+				return `<img src="${images[index]}" class="size-16 !p-0 rounded-md object-cover ${className}">`;
 			},
 		},
 		slidesPerView: 1, // Adjust this according to your needs

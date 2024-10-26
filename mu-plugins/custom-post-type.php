@@ -4,7 +4,7 @@ function project_post_types() {
     register_post_type('project',
         array(
             'supports' => array('title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail'),
-            'rewrite' => array('slug' => 'projects', 'with_front' => false), // 'with_front' set to false
+            'rewrite' => array('slug' => 'project', 'with_front' => false), // 'with_front' set to false
             'has_archive' => true,
             'public' => true,
             'show_in_rest' => true, // For block editor support

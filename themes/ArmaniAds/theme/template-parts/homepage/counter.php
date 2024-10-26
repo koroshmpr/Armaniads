@@ -6,13 +6,13 @@ $bgCounter = $counterSection['background_type'];
 	class="lg:py-28 py-16 bg-cover bg-primary grid justify-center items-center relative overflow-hidden">
 	<?= ($bgCounter == 'image' && isset($counterSection['image']['url'])) ? 'style="background-image: url(' . $counterSection['image']['url'] . ')"' : ''; ?>
 	<?php if ($bgCounter == 'video'): ?>
-		<video class="size-full object-cover absolute inset-0 -z-1" autoplay muted loop playsinline>
+		<video loading="lazy" class="size-full object-cover absolute inset-0 -z-1" autoplay muted loop playsinline>
 			<source src="<?= $counterSection['video']['url'] ?? ''; ?>" type="video/mp4"/>
 			<track kind="captions" srclang="en" label="English" default>
 		</video>
 	<?php endif ?>
 	<div class="container w-screen mx-auto text-white z-[1]">
-		<h5 class="text-5xl fw-bold text-center">
+		<h5 class="lg:text-5xl text-3xl fw-bold text-center">
 			<?= $counterSection['title'] ?? ''; ?>
 		</h5>
 		<?php

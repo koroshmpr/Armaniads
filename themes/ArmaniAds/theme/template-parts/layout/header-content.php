@@ -8,7 +8,7 @@ if (is_404() || !is_front_page() && is_home() && !in_array(get_post_type(), ['pr
 ?>
 <header x-data="{ open: false, scrolled: false }"
 		x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"
-		:class="scrolled ? 'bg-black bg-opacity-35 py-2' : '<?= $bg_class; ?> py-4'"
+		:class="scrolled ? 'bg-black bg-opacity-50 py-2' : '<?= $bg_class; ?> py-4'"
 		class="fixed inset-x-0 top-0 text-secondary lg:px-8 lg:py-6 px-6 z-10 flex justify-between items-center transition-all duration-300"
 		id="masthead">
 	<div class="flex gap-4 items-center">
@@ -20,7 +20,7 @@ if (is_404() || !is_front_page() && is_home() && !in_array(get_post_type(), ['pr
 		get_template_part('template-parts/global/logo', null, $args);
 		?>
 		<?php $phone = get_field('phone', 'option'); ?>
-		<a class="text-white font-bold" aria-label="call us" href="tel:<?= $phone; ?>">
+		<a class="text-white hidden lg:inline font-bold" aria-label="call us" href="tel:<?= $phone; ?>">
 			<?= $phone; ?>
 		</a>
 	</div>
@@ -43,7 +43,7 @@ if (is_404() || !is_front_page() && is_home() && !in_array(get_post_type(), ['pr
 	<div id="menuModal" x-show="open" x-cloak
 		 :class="open ? 'flex' : 'hidden'"
 		 class="fixed inset-0 bg-primary z-50 items-center justify-center">
-		<button aria-controls="primary-menu" aria-expanded="false" @click="open = false"
+		<button aria-label="close modal" aria-controls="primary-menu" aria-expanded="false" @click="open = false"
 				class="text-xl absolute top-10 left-10 focus:outline-none hover:text-white">
 			<svg width="30" height="30" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
 				<path

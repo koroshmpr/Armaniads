@@ -75,5 +75,13 @@ article.post-container, .about-list, .content, #blog_content {
 }
 
 #primary-menu:first-child > .parent-menu-item:hover > a {
+	@apply underline-offset-4;
 	text-decoration: underline;
+}
+#primary-menu .current-menu-item > a,
+#primary-menu > .current-menu-ancestor > a {
+	@apply text-secondary !important;
+}
+.gform_validation_errors , .gfield_validation_message {
+	@apply hidden
 }

@@ -14,7 +14,7 @@ $clients = $clientsSection['client']; ?>
 					<?php foreach ($clients as $index => $client) :
 						if (has_post_thumbnail($client->ID)) : ?>
 							<div class="swiper-slide">
-							<img width="120" height="120" src="<?= get_the_post_thumbnail_url($client->ID, 'full'); ?>"
+							<img width="120" height="120" loading="lazy" src="<?= get_the_post_thumbnail_url($client->ID, 'thumbnail'); ?>"
 								 alt="<?= get_the_title($client->ID); ?>"
 								 class="h-auto select-none transition-all grayscale hover:grayscale-0 duration-500">
 						<?php

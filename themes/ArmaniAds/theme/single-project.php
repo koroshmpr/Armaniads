@@ -47,11 +47,11 @@ if ($brand) :
 	<a x-data="{ open: false, scrolled: false }"
 	   x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 })"
 	   x-transition
-	   class="size-10 fixed lg:top-24 bottom-4 bg-blue-950 justify-center transition-all items-center hover:bg-blue-950 duration-1000 flex text-secondary rounded-s-full z-[5]"
+	   class="size-10 fixed top-24 hidden bg-blue-950 justify-center transition-all items-center hover:bg-blue-950 duration-1000 lg:flex text-secondary rounded-s-full z-[5]"
 	   :class="scrolled ? 'left-0' : '-left-full' "
 	   href="/project"
 	   aria-label="Back to archive">
-		<svg width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+		<svg width="30" height="30" fill="currentColor" class="bi bg-secondary text-primary transition-all hover:bg-white hover:text-primary rounded-full bi-chevron-left" viewBox="0 0 16 16">
 			<path fill-rule="evenodd"
 				  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
 		</svg>

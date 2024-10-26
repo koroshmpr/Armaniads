@@ -43,7 +43,7 @@ if ($gallery): ?>
 							</div>
 						<?php } ?>
 					</div>
-					<div class="swiper-pagination fixed bg-black overflow-x-scroll lg:overflow-x-hidden bg-opacity-75 py-3 flex justify-center gap-2"></div>
+					<div class="swiper-pagination fixed bg-black overflow-x-scroll lg:overflow-x-hidden bg-opacity-90 py-3 flex lg:flex-wrap lg:justify-center gap-2"></div>
 				</div>
 			</div>
 		</div>

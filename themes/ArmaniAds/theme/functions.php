@@ -85,6 +85,8 @@ if ( ! function_exists( 'armani_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		// Register custom image sizes
+		add_image_size('project-thumbnails', 900, 400, true); // Adjust height and cropping as needed
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(

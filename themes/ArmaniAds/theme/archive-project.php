@@ -52,14 +52,14 @@ if ($loop->have_posts()) : ?>
 				<div
 					class="absolute inset-0"
 				>
-					<img class="object-cover w-full h-full"
+					<img class="lg:object-cover object-contain bg-white w-full h-full"
 						 src="<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url() : ''; ?>"
 						 alt="<?php echo esc_attr(get_the_title()); ?>">
 				</div>
 
 
 				<!-- Image -->
-				<div class="w-full h-64 overflow-hidden">
+				<div class="w-full lg:h-64 h-32 overflow-hidden">
 
 					<!-- Title -->
 					<div

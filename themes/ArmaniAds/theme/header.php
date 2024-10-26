@@ -17,20 +17,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 	<?php
-		$scripts = get_field('header-scripts' , 'option');
-		echo $scripts ?? '';
+	$scripts = get_field('header-scripts', 'option');
+	echo $scripts ?? '';
 	?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php
-$scripts = get_field('body-scripts' , 'option');
+$scripts = get_field('body-scripts', 'option');
 echo $scripts ?? '';
-?>
-<?php wp_body_open(); ?>
-
-<?php get_template_part('template-parts/layout/header', 'content'); ?>
-<?php
+wp_body_open();
+if (!is_page_template('festival.php')):
+	get_template_part('template-parts/layout/header', 'content');
+endif;
 if (is_page_template('about-us.php')) {
 	$background = get_field('bg-pattern-page', 'option')['url'] ?? '';
 }
@@ -40,6 +39,6 @@ if (is_singular('project') || is_page_template('station.php') || is_page_templat
 }
 ?>
 
-<main class="min-h-[70vh] bg-no-repeat bg-fixed bg-cover"
+<main class="min-h-[70vh] <?= is_page_template('festival.php') ? 'bg-blue-950' : ''; ?> bg-no-repeat bg-fixed bg-cover"
 	  style="background-image: url('<?php echo esc_url($background ?? ''); ?>')"
 	  id="<?= get_post_type() ?? ''; ?>-<?= the_ID(); ?>">

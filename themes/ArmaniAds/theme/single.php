@@ -51,7 +51,7 @@ global $post;
 		</div>
 		<aside class="h-full lg:col-span-1 col-span-4">
 			<div class="rounded-md bg-primary p-6 shadow mb-5">
-				<h4 class="font-bold text-2xl mb-3 text-white">مقالات پیشنهادی ما</h4>
+				<p class="font-bold text-2xl mb-3 text-white">مقالات پیشنهادی ما</p>
 				<div class="grid">
 					<?php
 					$args = array(
@@ -78,7 +78,7 @@ global $post;
                                         </span>
 										<?php } ?>
 									</div>
-									<h6 class="fw-bolder text-white"><?php echo get_the_title(); ?></h6>
+									<p class="fw-bolder text-white"><?php echo get_the_title(); ?></p>
 								</div>
 							</a>
 						<?php endwhile;
@@ -94,14 +94,15 @@ global $post;
 			@click="activeTOC = !activeTOC"
 			:class="scrolled ? 'right-4' : '-right-full' "
 			x-transition
-			class="size-12 lg:hidden fixed bottom-20 bg-secondary justify-center transition-all items-center flex duration-700 text-primary text-bold rounded-full z-[5]">
+			aria-labelledby="toc"
+			class="size-12 lg:hidden fixed top-1/2 bg-secondary justify-center transition-all items-center flex duration-700 text-primary text-bold rounded-full z-[5]">
 			<svg width="20" height="20" fill="currentColor" class="bi bi-list-ul"
 				 viewBox="0 0 16 16">
 				<path fill-rule="evenodd"
 					  d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
 			</svg>
 		</button>
-		<div @click="activeTOC = false" :class="activeTOC ? 'translate-y-0 opacity-100' : 'translate-y-full'"
+		<div @click="activeTOC = false" :class="activeTOC ? 'translate-y-0 opacity-100' : 'translate-y-full'" id="toc"
 			 class="fixed inset-0 opacity-0 transition-all bottom-0 backdrop-blur-sm duration-500 flex z-[5] justify-center items-end">
 			<div :class="activeTOC ? 'translate-y-0' : 'translate-y-full'"
 				 class="bg-primary/90 h-1/2 overflow-y-scroll w-full pt-16 transition-all">

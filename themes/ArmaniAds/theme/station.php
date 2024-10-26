@@ -13,7 +13,7 @@ if ($video):?>
 	<?php get_template_part('template-parts/global/title-content'); ?>
 </section>
 	<?php get_template_part('template-parts/global/gallery'); ?>
-<section class="container py-8 mb-6" x-data="{ activeStation: null }">
+<section class="container py-8 mb-6" x-data="{ activeStation: 1 }">
 	<h3 class="text-2xl text-center font-bold text-primary pb-8 px-6 lg:px-0">
 		<?= get_field('map_title'); ?>
 	</h3>
@@ -38,9 +38,11 @@ if ($video):?>
 								the_row();
 								?>
 								<button type="button" style="top: <?= $top; ?>; left:<?= $left; ?>"
+										:class="activeStation == <?= $station_counter; ?> ? '!text-secondary' : ''"
 										class="absolute rounded-full bg-transparent text-white hover:text-secondary hover:-translate-y-1 transition-all flex justify-center items-center shadow-none"
 										@click="activeStation = <?= $station_counter; ?>">
 									<svg width="25" height="25" fill="currentColor"
+
 										 class="bi bi-geo-alt-fill transition-all size-4 lg:size-8 hover:scale-150"
 										 viewBox="0 0 16 16">
 										<path

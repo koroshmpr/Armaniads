@@ -15,12 +15,12 @@ $sliderType = get_field('slide-type');
 					$type = $slide['bg-type'];
 					if ($type == 'image'):
 						?>
-						<img class="object-cover w-screen lg:h-screen" src="<?= $slide['image']['url'] ?? ''; ?>"
+						<img loading="lazy" class="object-cover w-screen lg:h-screen" src="<?= $slide['image']['url'] ?? ''; ?>"
 							 alt="<?= $slide['image']['title'] ?? ''; ?>">
 					<?php endif;
 					if ($type == 'video'):
 						?>
-						<video class="object-cover w-screen lg:h-screen" autoplay muted loop playsinline
+						<video loading="lazy" class="object-cover w-screen lg:h-screen" autoplay muted loop playsinline
 							   poster="<?= $slide['video-cover']['url'] ?? ''; ?>">
 							<source src="<?= $slide['video']['url'] ?? ''; ?>" type="video/mp4"/>
 							<track kind="captions" srclang="en" label="English" default>
