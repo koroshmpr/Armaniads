@@ -44,7 +44,7 @@ global $post;
 						<path
 							d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
 					</svg>
-					<?= get_the_date('d  F , Y'); ?>
+					<?= shamsi_date('d F, Y', get_the_time('U')); ?>
 				</div>
 			</div>
 			<article class="text-justify prose" id="blog_content"><?php the_content(); ?></article>
@@ -110,6 +110,21 @@ global $post;
 			</div>
 		</div>
 	</section>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			document.querySelectorAll('.table-of-contents a').forEach(link => {
+				link.addEventListener('click', (e) => {
+					e.preventDefault();
+					const targetId = link.getAttribute('href').replace('#', '');
+					const targetElement = document.getElementById(targetId);
+					if (targetElement) {
+						targetElement.scrollIntoView({ behavior: 'smooth' });
+					}
+				});
+			});
+		});
+
+	</script>
 <?php get_template_part('template-parts/global/next-prev-post'); ?>
 <?php get_template_part('template-parts/global/share-post'); ?>
 <?php

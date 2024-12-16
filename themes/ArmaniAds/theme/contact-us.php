@@ -3,7 +3,7 @@
 get_header()
 ?>
 <section style="background-image: url('<?= get_field('background')['url']; ?>')" class="bg-cover bg-no-repeat">
-	<div class="bg-black bg-opacity-50 backdrop-blur-sm">
+	<div class="bg-black bg-opacity-50 backdrop-blur-sm min-h-[70vh]">
 		<div class="container lg:py-52 py-16 px-6 lg:px-0 mx-auto flex flex-wrap gap-8 lg:gap-16 justify-center lg:justify-between items-stretch">
 			<div class="basis-full lg:basis-2/5 grid gap-3">
 				<div class="text-white border-2 rounded-2xl text-center border-white p-4 bg-primaryMask leading-loose mb-4">

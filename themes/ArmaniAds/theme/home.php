@@ -24,7 +24,7 @@ if ($query->have_posts()) { ?>
 				<div class="grid gap-3 items-start flex-1">
 					<h5 class="text-black/75 text-xl"><?php the_title(); ?></h5>
 					<div class="details text-sm text-gray-600">
-						<span class="date"><?php echo get_the_date(); ?></span> |
+						<span class="date"><?= shamsi_date('d F, Y', get_the_time('U')); ?></span> |
 						<span><?= do_shortcode('[reading_time]') ?> دقیقه</span>
 					</div>
 					<p><?= wp_trim_words(get_the_content(), 30) ?></p>

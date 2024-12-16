@@ -12,24 +12,23 @@ $heading_counter = 0; // Use a single counter for all headings
 // Automatically add semantic IDs to H2 and H3 headings
 function auto_id_headings($content)
 {
-    global $heading_counter;
-    $heading_counter = 0; // Reset counter for each content
+    // Match only h2 and h3 tags
+    $content = preg_replace_callback('/(<h[2-3](.*?))>(.*?)(<\/h[2-3]>)/i', function ($matches) {
+        // Generate a semantic ID based on the heading content
+        $heading_text = strip_tags($matches[3]);
+        $semantic_id = sanitize_title_with_dashes($heading_text); // Creates a URL-friendly ID
 
-    // Only match h2 and h3 tags
-    $content = preg_replace_callback('/(<h[2-3](.*?))>(.*)(<\/h[2-3]>)/i', function ($matches) {
-        global $heading_counter;
-        $heading_counter++; // Increment counter for each heading
-
-        // Add semantic ID like "heading-1", "heading-2", etc.
+        // Add the ID attribute if not already present
         if (!stripos($matches[0], 'id=')) {
-            $semantic_id = "heading-" . $heading_counter;
-            $matches[0] = $matches[1] . $matches[2] . ' id="' . $semantic_id . '">' . $matches[3] . $matches[4];
+            return $matches[1] . $matches[2] . ' id="' . $semantic_id . '">' . $matches[3] . $matches[4];
         }
 
         return $matches[0];
     }, $content);
+
     return $content;
 }
+
 
 add_filter('the_content', 'auto_id_headings');
 

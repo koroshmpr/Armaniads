@@ -13,6 +13,10 @@
 ?><!doctype html>
 <html class="overflow-x-hidden" <?php language_attributes(); ?>>
 <head>
+	<?php
+	$focus_keyword = get_post_meta(get_the_ID(), 'rank_math_focus_keyword', true);
+	?>
+	<meta name="keywords" content="<?= $focus_keyword ??  get_bloginfo('name'); ?>">
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
